@@ -66,7 +66,7 @@ class PushplusSender:
             logger.warning("PushPlus Token 未配置，跳过推送")
             return False
 
-        api_url = "http://www.pushplus.plus/send"
+        api_url = "https://www.pushplus.plus/send"
 
         if title is None:
             date_str = datetime.now().strftime('%Y-%m-%d')
