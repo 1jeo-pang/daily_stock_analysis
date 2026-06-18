@@ -1218,7 +1218,7 @@ class Config:
             elif anthropic_api_keys:
                 litellm_model = f'anthropic/{_anthropic_model_name}'
             elif deepseek_api_keys:
-                litellm_model = 'deepseek/deepseek-chat'
+                litellm_model = 'deepseek/deepseek-v4-flash'
                 inferred_legacy_deepseek_model = True
             elif openai_api_keys:
                 # For openai-compatible models, add prefix only if not already prefixed
@@ -1285,7 +1285,8 @@ class Config:
             logger.warning(
                 "Deprecation warning:\n"
                 "deepseek-chat will be deprecated on 2026-07-24,\n"
-                "please migrate to deepseek-v4-flash."
+                "project has already migrated default to deepseek-v4-flash;\n"
+                "your explicit LITELLM_MODEL override still points to deepseek-chat."
             )
 
         # Auto-infer LITELLM_MODEL from channels when not explicitly set
